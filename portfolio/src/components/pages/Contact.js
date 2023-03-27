@@ -10,7 +10,6 @@ const styles ={
     },
     inputBox: {
         margin: '20px',
-        
     }
 }
 
@@ -48,16 +47,18 @@ export default function Contact() {
         <div className='col-10'>
             <h1 className="text-center header" style={styles.heading}>Contact</h1>
             <form>
-                <div class="form-group">
-                    <input value={name} onChange={handleInputChange} name="name" style={styles.inputBox} type="text" class="form-control" id="InputEmail1" placeholder="Enter email"></input>
+                <div className="form-group">
+                    <input value={name} onChange={handleInputChange} name="name" style={styles.inputBox} type="text" className="form-control" id="InputEmail1" placeholder="Enter Name"></input>
                 </div>
-                <div class="form-group">
-                    <input value={email} onChange={handleInputChange} name="email" style={styles.inputBox} type="email" class="form-control" placeholder=""></input>
+                <div className="form-group">
+                    <input value={email} onChange={handleInputChange} name="email" style={styles.inputBox} type="email" className="form-control" placeholder="Enter Email"></input>
                 </div>
-                <div class="form-group">
-                    <textarea value={message} onChange={handleInputChange} style={styles.inputBox} class="form-control" rows="10"></textarea>
+                <div className="form-group">
+                    <textarea value={message} onChange={handleInputChange} style={styles.inputBox} className="form-control" rows="10" placeholder='message'></textarea>
                 </div>
-                <button type="submit" onClick={handleFormSubmit} class="btn btn-primary">Submit</button>
+                <div style={styles.inputBox}>
+                    <button type="submit" onClick={handleFormSubmit} className="btn btn-primary">Submit</button>
+                </div>
             </form>
             {errorMessage && (
                 <div>
