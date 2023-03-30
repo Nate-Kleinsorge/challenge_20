@@ -29,6 +29,11 @@ const ContactForm = () => {
     }
 
     return (
+        <div>
+            <h1 className="text-center border-bottom text-white header">Contact Me</h1>
+            <p className="text-white text-center">
+                Please Feel free to reach out about wanted websites, or job inquires. I will get back to you as soon as possible.
+            </p>
         <div className="row">
             <div className="mx-auto col-10">
                 <form action={FORM_ENDPOINT} onSubmit={handleSubmit} method="POST" target="_blank">
@@ -44,6 +49,7 @@ const ContactForm = () => {
                     <button style={styles.submitButton} type="submit" className="btn btn-primary">Submit</button>
                 </form>
             </div>
+        </div>
         </div>
     )
 }

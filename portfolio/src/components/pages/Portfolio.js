@@ -52,7 +52,7 @@ export default function Portfolio() {
 
     return (
         <div>
-            <h1 style={{ marginBottom: '10px' }}className="text-center border-bottom text-white header">Portfolio</h1>
+            <h1 className="text-center border-bottom text-white header">Portfolio</h1>
             <div className='container'>
                 <div className='row'>
                     <div className='d-flex flex-md-row flex-wrap'>
