@@ -32,16 +32,16 @@ const ContactForm = () => {
         <div className="row">
             <div className="mx-auto col-10">
                 <form action={FORM_ENDPOINT} onSubmit={handleSubmit} method="POST" target="_blank">
-                    <div class="form-group">
-                        <input style={styles.inputBox} type="text" class="form-control" placeholder="Enter Name" name="name" required />
+                    <div className="form-group">
+                        <input style={styles.inputBox} type="text" className="form-control" placeholder="Enter Name" name="name" required />
                     </div>
-                    <div class="form-group">
-                        <input style={styles.inputBox} type="email" class="form-control" placeholder="Enter Email" name="email" required />
+                    <div className="form-group">
+                        <input style={styles.inputBox} type="email" className="form-control" placeholder="Enter Email" name="email" required />
                     </div>
-                    <div class="form-group">
-                        <textarea style={styles.inputBox} class="form-control" id="exampleFormControlTextarea1" rows="8" name="message" required></textarea>
+                    <div className="form-group">
+                        <textarea style={styles.inputBox} className="form-control" id="exampleFormControlTextarea1" rows="8" name="message" required></textarea>
                     </div>
-                    <button style={styles.submitButton} type="submit" class="btn btn-primary">Submit</button>
+                    <button style={styles.submitButton} type="submit" className="btn btn-primary">Submit</button>
                 </form>
             </div>
         </div>

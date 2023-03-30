@@ -2,7 +2,7 @@ function Navbar({ currentPage, handlePageChange }) {
     return(
         <div className="navbar">
             <nav className="navbar navbar-expand-lg navbar-dark bg-transparent">
-                <div class="container-fluid">
+                <div className="container-fluid">
                     <button className="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarExample01" aria-controls="navbarExample01" aria-expanded="false" aria-label="Toggle navigation">
                     </button>
                     <div className="text-right collapse navbar-collapse" id="navbarExample01">
