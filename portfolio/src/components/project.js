@@ -1,24 +1,33 @@
 import React from 'react';
 
 const styles = {
-    margin: {
-        margin: '40px',
+    cardMargin: {
+        margin: '50px'
     },
-    hidden: {
-        visibility: 'hidden',
+    padding: {
+        padding: '10px'
     },
-    shown: {
-        visibility: 'visible',
+    link: {
+        textAlign: 'center',
+        margin: '40%',
+    },
+    image: {
+        border: '5px solid black',
+        margin: '10px',
     }
 }
 
 export default function Project(props) {
     return (
-        <div className='card col-4' style={styles.margin}>
-            {/* <img src='../'></img> */}
+        <div style={styles.cardMargin} className='card col-4'>
+            <h3 className='card-header text-center'>{props.name}</h3>
+            <img style={styles.image} src={props.img} alt={props.alt}></img>
             <div className='card-text'>
-                <a onMouseEnter={props.handleStyleShow} onMouseLeave={props.handleStyleHide} style={{ visibility: 'hidden' }} href={props.href}>application</a><br></br>
-                <a onMouseEnter={props.handleStyleShow} onMouseLeave={props.handleStyleHide} style={{ visibility: 'hidden' }} href={props.github}>github repo</a>
+                <p style={styles.padding} className='fs-4'>{props.description}</p>
+            </div>
+            <div className='card-text'>
+                <a style={styles.link} calssName='btn btn-info' href={props.link} role='button'>application</a><br></br>
+                <a style={styles.link} href={props.github}>github repo</a>
             </div>
         </div>
     );
