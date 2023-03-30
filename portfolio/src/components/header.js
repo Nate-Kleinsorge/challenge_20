@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Navbar from "./nav";
 import About from './pages/About';
 import Portfolio from './pages/Portfolio';
-import Contact from './pages/Contact';
+import ContactForm from './pages/Contact';
 import Resume from './pages/Resume';
 
 export default function Header() {
@@ -16,7 +16,7 @@ export default function Header() {
             return <Portfolio />;
         }
         if (currentPage === 'Contact') {
-            return <Contact />;
+            return <ContactForm />;
         }
         if (currentPage === 'Resume') {
             return <Resume />;

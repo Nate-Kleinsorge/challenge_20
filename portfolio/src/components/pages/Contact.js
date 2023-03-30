@@ -1,70 +1,51 @@
-import React, { useState } from 'react';
-import { validateEmail } from '../../utils/helpers';
+import React, { useState } from "react";
 
 const styles ={
-    heading: {
-        color: 'white'
-    },
-    content: {
-        color: 'white',
-    },
     inputBox: {
         margin: '20px',
-    }
+    },
+    submitButton: {
+        marginLeft: '45%',
+    },
 }
 
-export default function Contact() {
-    const [name, setName] = useState('');
-    const [email, setEmail] = useState('');
-    const [message, setMessage] = useState('');
-    const [errorMessage, setErrorMessage] = useState('');
+const FORM_ENDPOINT = "https://public.herotofu.com/v1/90611a10-ccf5-11ed-bffe-d5e6f853e30c";
 
-    const handleInputChange = (e) => {
-        const { target } = e;
-        const inputType = target.type;
-        const inputValue = target.value;
+const ContactForm = () => {
+    const [submitted, setSubmitted] = useState(false);
+    const handleSubmit = () => {
+        setTimeout(() => {
+            setSubmitted(true);
+        }, 100);
+    };
 
-        if (inputType === 'name') {
-            setName(inputValue);
-        } else if (inputType === 'email') {
-            setEmail(inputValue);
-        } else {
-            setMessage(inputValue);
-        }
+    if (submitted) {
+        return(
+            <>
+                <h2>Thank You!</h2>
+                <p>We'll be in touch soon.</p>
+            </>
+        );
     }
 
-    const handleFormSubmit = (e) => {
-        e.preventDefault();
-        if (!validateEmail(email) || !name || !message) {
-            setErrorMessage('invalid Email, or not all fields completed.')
-            return;
-        }
-        setName('');
-        setEmail('');
-        setMessage('')
-    }
     return (
-        <div className='col-10'>
-            <h1 className="text-center header" style={styles.heading}>Contact</h1>
-            <form>
-                <div className="form-group">
-                    <input value={name} onChange={handleInputChange} name="name" style={styles.inputBox} type="text" className="form-control" id="InputEmail1" placeholder="Enter Name"></input>
-                </div>
-                <div className="form-group">
-                    <input value={email} onChange={handleInputChange} name="email" style={styles.inputBox} type="email" className="form-control" placeholder="Enter Email"></input>
-                </div>
-                <div className="form-group">
-                    <textarea value={message} onChange={handleInputChange} style={styles.inputBox} className="form-control" rows="10" placeholder='message'></textarea>
-                </div>
-                <div style={styles.inputBox}>
-                    <button type="submit" onClick={handleFormSubmit} className="btn btn-primary">Submit</button>
-                </div>
-            </form>
-            {errorMessage && (
-                <div>
-                    <p className="error-text">{errorMessage}</p>
-                </div>
-            )}
+        <div className="row">
+            <div className="mx-auto col-10">
+                <form action={FORM_ENDPOINT} onSubmit={handleSubmit} method="POST" target="_blank">
+                    <div class="form-group">
+                        <input style={styles.inputBox} type="text" class="form-control" placeholder="Enter Name" name="name" required />
+                    </div>
+                    <div class="form-group">
+                        <input style={styles.inputBox} type="email" class="form-control" placeholder="Enter Email" name="email" required />
+                    </div>
+                    <div class="form-group">
+                        <textarea style={styles.inputBox} class="form-control" id="exampleFormControlTextarea1" rows="8" name="message" required></textarea>
+                    </div>
+                    <button style={styles.submitButton} type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
         </div>
-    );
+    )
 }
+
+export default ContactForm;
