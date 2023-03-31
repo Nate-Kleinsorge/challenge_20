@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Helmet } from "react-helmet";
 
 const styles ={
     inputBox: {
@@ -29,6 +30,10 @@ const ContactForm = () => {
     }
 
     return (
+        <>
+        <Helmet>
+            <title>Nate Kleinsorge | Contact</title>
+        </Helmet>
         <div>
             <h1 className="text-center border-bottom text-white header">Contact Me</h1>
             <p className="text-white text-center">
@@ -51,6 +56,7 @@ const ContactForm = () => {
             </div>
         </div>
         </div>
+        </>
     )
 }
 

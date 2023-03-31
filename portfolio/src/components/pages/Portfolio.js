@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import Project from '../project';
 import mongoDBLogo from '../../assets/Mongo-DB.png';
+import readMe from '../../assets/readme-picture.png';
+import noteTaker from '../../assets/note-taker.png';
+import { Helmet } from 'react-helmet';
 
 export default function Portfolio() {
     const [projectUrls] = useState([
@@ -13,50 +16,56 @@ export default function Portfolio() {
             description: 'I used mongoDB and express to create an app to track and save thoughts (backend only)',
         },
         {
-            name: '',
-            alt: '',
-            img: '',
+            name: 'ReadME generator',
+            alt: 'writing read me',
+            img: readMe,
             href: '',
-            github: '',
-            description: '',
+            github: 'https://github.com/Nate-Kleinsorge/ReadME-generator',
+            description: 'Quickly answer some questions to generate a professional readMe file in minutes (backend only)',
         },
         {
-            alt: '',
-            img: '',
-            href: '',
-            github: '',
-            description: '',
+            name: 'Note Taker',
+            alt: 'note taker',
+            img: noteTaker,
+            href: 'https://fathomless-gorge-41682.herokuapp.com/',
+            github: 'https://github.com/Nate-Kleinsorge/Note-Taker',
+            description: 'Take notes to remember for later use. Implements a local api/database.',
         },
-        {
-            alt: '',
-            img: '',
-            href: '',
-            github: '',
-            description: '',
-        },
-        {
-            alt: '',
-            img: '',
-            href: '',
-            github: '',
-            description: '',
-        },
-        {
-            alt: '',
-            img: '',
-            href: '',
-            github: '',
-            description: '',
-        }
+        // {
+        //     alt: '',
+        //     img: '',
+        //     href: '',
+        //     github: '',
+        //     description: '',
+        // },
+        // {
+        //     alt: '',
+        //     img: '',
+        //     href: '',
+        //     github: '',
+        //     description: '',
+        // },
+        // {
+        //     alt: '',
+        //     img: '',
+        //     href: '',
+        //     github: '',
+        //     description: '',
+        // }
     ])
 
     return (
+        <>
+        <Helmet>
+            <title>Nate Kleinsorge | Portfolio</title>
+        </Helmet>
         <div>
             <h1 className="text-center border-bottom text-white header">Portfolio</h1>
             <div className='container'>
                 <div className='row'>
                     <div className='d-flex flex-md-row flex-wrap'>
                         {projectUrls.map((project, idx) => (
+
                             <Project
                                 name={project.name}
                                 img={project.img}
@@ -71,5 +80,6 @@ export default function Portfolio() {
                 </div>
             </div>
         </div>
+        </>
     );
 }
