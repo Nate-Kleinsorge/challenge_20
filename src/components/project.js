@@ -12,6 +12,10 @@ const styles = {
         borderRadius: '66px',
         border: '5px solid black',
         margin: '10px',
+    },
+    link: {
+        margin: '5px',
+        width: '150px'
     }
 }
 
@@ -25,8 +29,8 @@ export default function Project(props) {
                     <p style={styles.padding} className='fs-4'>{props.description}</p>
                 </div>
                 <div className='card-text text-center'>
-                    <a style={styles.link} href={props.link}>application</a><br></br>
-                    <a style={styles.link} href={props.github}>github repo</a>
+                    <a className="btn btn-dark" style={styles.link} href={props.link}>application</a><br></br>
+                    <a className="btn btn-dark" style={styles.link} href={props.github}>github repo</a>
                 </div>
             </div>
         );
@@ -39,7 +43,7 @@ export default function Project(props) {
                 <p style={styles.padding} className='fs-4'>{props.description}</p>
             </div>
             <div className='card-text text-center'>
-                <a style={styles.link} href={props.github}>github repo</a>
+                <a className="btn btn-dark" style={styles.link} href={props.github}>github repo</a>
             </div>
         </div>
     );

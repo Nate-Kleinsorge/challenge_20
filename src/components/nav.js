@@ -4,8 +4,8 @@ function Navbar({ currentPage, handlePageChange }) {
             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav">
+            <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul className="navbar-nav">
                     <li className='nav-item active'>
                         <a href="#about" onClick={() => handlePageChange('About')} className={currentPage === 'About' ? 'nav-link active' : 'nav-link'}>About me</a>
                     </li>

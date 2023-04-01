@@ -63,7 +63,7 @@ export default function Portfolio() {
             <h1 className="text-center border-bottom text-white header">Portfolio</h1>
             <div className='container'>
                 <div className='row'>
-                    <div className='d-flex flex-md-row flex-wrap'>
+                    <div className='d-flex flex-md-row flex-wrap justify-content-around'>
                         {projectUrls.map((project, idx) => (
 
                             <Project
