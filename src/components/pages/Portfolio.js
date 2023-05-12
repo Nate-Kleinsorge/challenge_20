@@ -3,6 +3,7 @@ import Project from '../project';
 import mongoDBLogo from '../../assets/Mongo-DB.png';
 import readMe from '../../assets/readme-picture.png';
 import noteTaker from '../../assets/note-taker.png';
+import certificate from '../../assets/certificate.png';
 import { Helmet } from 'react-helmet';
 
 export default function Portfolio() {
@@ -76,6 +77,13 @@ export default function Portfolio() {
                                 key={"project" + idx}
                             />
                         ))}
+                    </div>
+                </div>
+            </div>
+            <div className='container'>
+                <div className='column'>
+                    <div className='justify-content-center'>
+                        <img src={certificate} className='img-fluid' alt="Nathaniel Kleinsorge's full stack web development bootcamp certification"></img>
                     </div>
                 </div>
             </div>
